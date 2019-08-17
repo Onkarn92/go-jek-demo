@@ -1,3 +1,4 @@
 <resources>
 	<string name="app_name">GoJek Demo</string>
+	<string name="title_activity_trending">Trending</string>
 </resources>
