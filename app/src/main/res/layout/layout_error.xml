@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	
+	<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/errorImage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/no_internet_connection"
+			app:layout_constraintBottom_toTopOf="@+id/errorPrimaryText"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_chainStyle="packed" />
+	
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/errorPrimaryText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/value_24"
+			android:fontFamily="@font/roboto_bold"
+			android:text="@string/err_something_went_wrong"
+			android:textAlignment="center"
+			android:textColor="@color/colorErrorPrimaryText"
+			android:textSize="@dimen/text_18"
+			app:layout_constraintBottom_toTopOf="@+id/errorSecondaryText"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/errorImage" />
+	
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/errorSecondaryText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/value_8"
+			android:fontFamily="@font/roboto"
+			android:text="@string/err_msg_something_went_wrong"
+			android:textAlignment="center"
+			android:textColor="@color/colorErrorSecondaryText"
+			android:textSize="@dimen/text_15"
+			app:layout_constraintBottom_toTopOf="@+id/errorRetryBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/errorPrimaryText" />
+	
+	<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/errorRetryBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/value_16"
+			android:layout_marginEnd="@dimen/value_16"
+			android:layout_marginBottom="@dimen/value_16"
+			android:background="@drawable/bg_button"
+			android:fontFamily="@font/roboto_medium"
+			android:text="@string/retry"
+			android:textColor="@color/colorGreen"
+			android:textSize="@dimen/text_15"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
