@@ -1,4 +1,23 @@
 <resources>
 	<string name="app_name">GoJek Demo</string>
 	<string name="title_activity_trending">Trending</string>
+	
+	<!--Errors-->
+	<string name="err_request_fail">Request Fail</string>
+	<string name="err_bad_request">Bad Request</string>
+	<string name="err_unauthorized">Unauthorized</string>
+	<string name="err_page_not_found">Page Not Found</string>
+	<string name="err_timeout">Request Timeout</string>
+	<string name="err_maintenance_break">Maintenance Break</string>
+	<string name="err_no_internet">No internet connection!</string>
+	<string name="err_something_went_wrong">Something went wrong!</string>
+	
+	<!--Error Messages-->
+	<string name="err_msg_request_fail">Request Fail</string>
+	<string name="err_msg_bad_request">The requested data is invalid, Please try again later.</string>
+	<string name="err_msg_unauthorized">This user is not authorized to access the data.</string>
+	<string name="err_msg_page_not_found">The server page you are looking for is not available.</string>
+	<string name="err_msg_timeout">Due to the server or network unavailability request cannot proceed.</string>
+	<string name="err_msg_maintenance_break">Sorry, the server is under maintenance. Please try again after some time.</string>
+	<string name="err_msg_something_went_wrong">An alien is probably blocking your signal.</string>
 </resources>
