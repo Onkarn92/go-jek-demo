@@ -11,6 +11,7 @@ package com.onkar.android.gojekdemo.utilities
  */
 
 const val EMPTY_STRING = ""
+const val NA = "N/A"
 const val AUTHOR = "author"
 const val NAME = "name"
 const val AVATAR = "avatar"

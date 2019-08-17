@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/value_16">
+	
+	<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/authorProfileImage"
+			android:layout_width="@dimen/value_32"
+			android:layout_height="@dimen/value_32"
+			android:layout_marginTop="@dimen/value_5"
+			app:layout_constraintEnd_toStartOf="@+id/guideline"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:srcCompat="@tools:sample/avatars[0]" />
+	
+	<androidx.constraintlayout.widget.Guideline
+			android:id="@+id/guideline"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintGuide_begin="50dp" />
+	
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/authorNameText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/value_16"
+			android:fontFamily="@font/roboto"
+			android:text="@string/default_author"
+			android:textColor="@color/colorPrimaryText"
+			android:textSize="@dimen/text_12"
+			app:layout_constraintBottom_toTopOf="@+id/repositoryNameText"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/guideline"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_chainStyle="packed" />
+	
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/repositoryNameText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/value_16"
+			android:layout_marginTop="@dimen/value_6"
+			android:fontFamily="@font/roboto_medium"
+			android:text="@string/default_repo_name"
+			android:textColor="@color/colorPrimaryText"
+			android:textSize="@dimen/text_15"
+			app:layout_constraintBottom_toTopOf="@+id/descriptionText"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/guideline"
+			app:layout_constraintTop_toBottomOf="@+id/authorNameText" />
+	
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/descriptionText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/value_16"
+			android:layout_marginTop="@dimen/value_8"
+			android:fontFamily="@font/roboto"
+			android:text="@string/default_description"
+			android:textColor="@color/colorPrimaryText"
+			android:textSize="@dimen/text_12"
+			app:layout_constraintBottom_toTopOf="@+id/detailsLayout"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/guideline"
+			app:layout_constraintTop_toBottomOf="@+id/repositoryNameText" />
+	
+	<androidx.appcompat.widget.LinearLayoutCompat
+			android:id="@+id/detailsLayout"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/value_16"
+			android:layout_marginTop="@dimen/value_8"
+			android:orientation="horizontal"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/guideline"
+			app:layout_constraintTop_toBottomOf="@+id/descriptionText">
+		
+		<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/languageText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableStart="@drawable/ic_circle"
+				android:drawablePadding="@dimen/value_4"
+				android:fontFamily="@font/roboto"
+				android:text="@string/default_language"
+				android:textColor="@color/colorPrimaryText"
+				android:textSize="@dimen/text_12" />
+		
+		<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/totalStarText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/value_16"
+				android:drawableStart="@drawable/ic_star"
+				android:drawablePadding="@dimen/value_4"
+				android:fontFamily="@font/roboto"
+				android:text="@string/default_stars"
+				android:textColor="@color/colorPrimaryText"
+				android:textSize="@dimen/text_12" />
+		
+		<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/totalForkText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/value_16"
+				android:drawableStart="@drawable/ic_fork"
+				android:drawablePadding="@dimen/value_4"
+				android:fontFamily="@font/roboto"
+				android:text="@string/default_forks"
+				android:textColor="@color/colorPrimaryText"
+				android:textSize="@dimen/text_12" />
+	</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

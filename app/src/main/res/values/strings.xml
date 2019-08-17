@@ -1,6 +1,13 @@
 <resources>
 	<string name="app_name">GoJek Demo</string>
 	<string name="title_activity_trending">Trending</string>
+	<string name="retry">Retry</string>
+	<string name="default_author">Microsoft</string>
+	<string name="default_repo_name">frontend-bootcamp</string>
+	<string name="default_description">This is default description of the repository.</string>
+	<string name="default_language">Kotlin</string>
+	<string name="default_stars">1689</string>
+	<string name="default_forks">895</string>
 	
 	<!--Errors-->
 	<string name="err_request_fail">Request Fail</string>
@@ -9,8 +16,8 @@
 	<string name="err_page_not_found">Page Not Found</string>
 	<string name="err_timeout">Request Timeout</string>
 	<string name="err_maintenance_break">Maintenance Break</string>
-	<string name="err_no_internet">No internet connection!</string>
-	<string name="err_something_went_wrong">Something went wrong!</string>
+	<string name="err_no_internet">No internet connection</string>
+	<string name="err_something_went_wrong">Something went wrong</string>
 	
 	<!--Error Messages-->
 	<string name="err_msg_request_fail">Request Fail</string>
