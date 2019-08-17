@@ -21,6 +21,8 @@ android {
 		versionCode version_code
 		versionName version_name
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		multiDexEnabled true
+		vectorDrawables.useSupportLibrary true
 	}
 	
 	/** List of all build types which is supported by app module. */
@@ -57,6 +59,7 @@ dependencies {
 	implementation "androidx.annotation:annotation:${annotation_version}"
 	implementation "com.google.android.material:material:${material_version}"
 	implementation "androidx.lifecycle:lifecycle-extensions:${lifecycle_extensions_version}"
+	implementation "androidx.multidex:multidex:${multidex_version}"
 	
 	// Testing
 	testImplementation "junit:junit:${junit_version}"
