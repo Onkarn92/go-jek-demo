@@ -42,6 +42,8 @@ buildscript {
 		glide_version = '4.9.0'
 		lifecycle_extensions_version = '2.2.0-alpha03'
 		multidex_version = '2.0.1'
+		skeleton_version = '1.1.2'
+		shimmer_layout_version = '2.1.0'
 	}
 	
 	repositories {
