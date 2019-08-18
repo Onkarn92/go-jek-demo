@@ -38,9 +38,32 @@ class TrendingRepositoryAdapter : RecyclerView.Adapter<ViewHolder>() {
 		}
 	}
 	
+	/**
+	 * Set items to be added in list.
+	 */
 	fun setItems(repos: ArrayList<GitHubRepo>) {
 		items = repos
 		notifyDataSetChanged()
+	}
+	
+	/**
+	 * Sort current list by star count in ascending order.
+	 */
+	fun sortByStars() {
+		if (!items.isNullOrEmpty()) {
+			items!!.sortBy {it.stars}
+			notifyDataSetChanged()
+		}
+	}
+	
+	/**
+	 * Sort current list by author name in ascending order.
+	 */
+	fun sortByName() {
+		if (!items.isNullOrEmpty()) {
+			items!!.sortBy {it.author}
+			notifyDataSetChanged()
+		}
 	}
 	
 	class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

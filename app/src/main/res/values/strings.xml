@@ -8,6 +8,8 @@
 	<string name="default_language">Kotlin</string>
 	<string name="default_stars">1689</string>
 	<string name="default_forks">895</string>
+	<string name="sort_by_stars">Sort by stars</string>
+	<string name="sort_by_name">Sort by name</string>
 	
 	<!--Errors-->
 	<string name="err_request_fail">Request Fail</string>
@@ -18,6 +20,7 @@
 	<string name="err_maintenance_break">Maintenance Break</string>
 	<string name="err_no_internet">No internet connection</string>
 	<string name="err_something_went_wrong">Something went wrong</string>
+	<string name="err_empty_response">Data is unavailable</string>
 	
 	<!--Error Messages-->
 	<string name="err_msg_request_fail">Request Fail</string>
@@ -27,4 +30,5 @@
 	<string name="err_msg_timeout">Due to the server or network unavailability request cannot proceed.</string>
 	<string name="err_msg_maintenance_break">Sorry, the server is under maintenance. Please try again after some time.</string>
 	<string name="err_msg_something_went_wrong">An alien is probably blocking your signal.</string>
+	<string name="err_msg_empty_response">Oops! Seems like we don\'t have what you are looking for.</string>
 </resources>
