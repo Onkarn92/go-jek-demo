@@ -20,11 +20,37 @@ import kotlinx.android.synthetic.main.item_trending_repositories_list.view.*
 class TrendingRepositoryAdapter : RecyclerView.Adapter<ViewHolder>() {
 	
 	private var items: ArrayList<GitHubRepo>? = null
+	private var expandedPosition: Int = -1
 	
 	override fun onCreateViewHolder(
 			parent: ViewGroup,
 			viewType: Int
-	): ViewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_trending_repositories_list, parent, false))
+	): ViewHolder {
+		val viewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_trending_repositories_list, parent, false))
+		viewHolder.itemView.setOnClickListener {
+			when {
+				this.expandedPosition == -1 -> {
+					// No view has expanded
+					this.expandedPosition = viewHolder.currentPosition
+					notifyItemChanged(this.expandedPosition)
+				}
+				this.expandedPosition == viewHolder.currentPosition -> {
+					// Already expanded and needs to collapse
+					this.expandedPosition = -1
+					notifyItemChanged(viewHolder.currentPosition)
+				}
+				else -> {
+					// Collapse already expanded item and expand new item
+					val alreadyExpandedPosition = this.expandedPosition
+					this.expandedPosition = -1
+					notifyItemChanged(alreadyExpandedPosition)
+					this.expandedPosition = viewHolder.currentPosition
+					notifyItemChanged(this.expandedPosition)
+				}
+			}
+		}
+		return viewHolder
+	}
 	
 	override fun getItemCount(): Int = items?.size ?: 0
 	
@@ -34,7 +60,7 @@ class TrendingRepositoryAdapter : RecyclerView.Adapter<ViewHolder>() {
 	) {
 		val repo = items?.get(position)
 		if (repo != null) {
-			holder.setData(repo)
+			holder.setData(repo, position, position == this.expandedPosition)
 		}
 	}
 	
@@ -68,7 +94,14 @@ class TrendingRepositoryAdapter : RecyclerView.Adapter<ViewHolder>() {
 	
 	class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		
-		fun setData(gitHubRepo: GitHubRepo) {
+		var currentPosition = 0
+		
+		fun setData(
+				gitHubRepo: GitHubRepo,
+				position: Int,
+				isExpanded: Boolean = false
+		) {
+			this.currentPosition = position
 			Glide.with(itemView.context).load(gitHubRepo.avatar).circleCrop().placeholder(R.drawable.ic_user_placeholder)
 					.error(R.drawable.ic_user_placeholder).into(this.itemView.authorProfileImage)
 			this.itemView.authorNameText.text = gitHubRepo.author ?: NA
@@ -77,6 +110,8 @@ class TrendingRepositoryAdapter : RecyclerView.Adapter<ViewHolder>() {
 			this.itemView.languageText.text = gitHubRepo.language ?: NA
 			this.itemView.totalStarText.text = gitHubRepo.stars.toString()
 			this.itemView.totalForkText.text = gitHubRepo.forks.toString()
+			this.itemView.descriptionText.visibility = if (isExpanded) View.VISIBLE else View.GONE
+			this.itemView.detailsLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
 		}
 	}
 }
