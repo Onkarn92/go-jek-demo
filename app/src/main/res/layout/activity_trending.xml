@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.appcompat.widget.LinearLayoutCompat
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:orientation="vertical"
 		tools:context=".views.TrendingActivity">
 	
 	<com.google.android.material.appbar.AppBarLayout
+			android:id="@+id/appBarLayout"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:theme="@style/AppTheme.AppBarOverlay">
@@ -17,15 +19,53 @@
 				android:layout_width="match_parent"
 				android:layout_height="?attr/actionBarSize"
 				android:background="?attr/colorPrimary"
-				app:popupTheme="@style/AppTheme.PopupOverlay" />
+				app:popupTheme="@style/AppTheme.PopupOverlay">
+			
+			<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+				
+				<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:fontFamily="@font/roboto_medium"
+						android:text="@string/title_activity_trending"
+						android:textColor="@color/colorToolbarText"
+						android:textSize="@dimen/text_21"
+						tools:ignore="RelativeOverlap" />
+				
+				<androidx.appcompat.widget.AppCompatImageView
+						android:id="@+id/menuImage"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentEnd="true"
+						android:layout_centerVertical="true"
+						android:layout_marginEnd="@dimen/value_10"
+						app:srcCompat="@drawable/ic_more" />
+			</RelativeLayout>
+		</androidx.appcompat.widget.Toolbar>
 	</com.google.android.material.appbar.AppBarLayout>
 	
-	<RelativeLayout
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+			android:id="@+id/trendingSwipeRefresh"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			app:layout_behavior="@string/appbar_scrolling_view_behavior"
-			tools:context=".views.TrendingActivity"
-			tools:showIn="@layout/activity_trending">
-	
-	</RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+			android:layout_height="match_parent">
+		
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+			
+			<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/trendingRecyclerView"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					tools:listitem="@layout/item_trending_repositories_list" />
+			
+			<include
+					android:id="@+id/errorLayout"
+					layout="@layout/layout_error"
+					android:visibility="gone" />
+		</RelativeLayout>
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
