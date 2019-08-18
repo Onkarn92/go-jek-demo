@@ -12,7 +12,7 @@
 			android:layout_height="@dimen/value_32"
 			android:layout_marginStart="@dimen/value_16"
 			android:layout_marginEnd="@dimen/value_16"
-			android:background="@drawable/ic_circle"
+			android:background="@drawable/ic_circle_a15"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toStartOf="@+id/guideline2"
 			app:layout_constraintHorizontal_bias="0.5"
