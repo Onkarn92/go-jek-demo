@@ -51,6 +51,7 @@
 	
 	<androidx.appcompat.widget.AppCompatButton
 			android:id="@+id/errorRetryBtn"
+			style="@style/Widget.AppCompat.Button.Borderless"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="@dimen/value_16"

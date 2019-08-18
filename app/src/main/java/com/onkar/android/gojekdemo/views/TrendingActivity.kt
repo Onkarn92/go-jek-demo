@@ -129,7 +129,10 @@ class TrendingActivity : AppCompatActivity(), Observer<Triple<String, String, Ar
 	) {
 		if (showSkeleton) {
 			skeletonScreen.show()
+			trendingSwipeRefresh.isRefreshing = false
+			trendingRecyclerView.visibility = View.VISIBLE
 		}
+		errorLayout.visibility = View.GONE
 		trendingViewModel.getRepositories()
 	}
 }
