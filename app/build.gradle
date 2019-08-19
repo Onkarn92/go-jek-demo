@@ -84,4 +84,8 @@ dependencies {
 	// Skeleton loading
 	implementation "com.ethanhua:skeleton:${skeleton_version}"
 	implementation "io.supercharge:shimmerlayout:${shimmer_layout_version}"
+	
+	// Room
+	implementation "androidx.room:room-runtime:${room_version}"
+	kapt "androidx.room:room-compiler:${room_version}"
 }

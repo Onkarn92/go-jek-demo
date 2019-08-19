@@ -133,6 +133,6 @@ class TrendingActivity : AppCompatActivity(), Observer<Triple<String, String, Ar
 			trendingRecyclerView.visibility = View.VISIBLE
 		}
 		errorLayout.visibility = View.GONE
-		trendingViewModel.getRepositories()
+		trendingViewModel.getRepositories(forceUpdate, this)
 	}
 }

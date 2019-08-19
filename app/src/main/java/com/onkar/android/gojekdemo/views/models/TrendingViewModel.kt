@@ -6,6 +6,7 @@
 
 package com.onkar.android.gojekdemo.views.models
 
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.onkar.android.gojekdemo.models.GitHubRepo
@@ -21,8 +22,11 @@ class TrendingViewModel : ViewModel() {
 	/**
 	 * Get all GitHub's trending repositories.
 	 */
-	fun getRepositories() {
-		TrendingRepository.getRepositories()
+	fun getRepositories(
+			forceUpdate: Boolean,
+			owner: LifecycleOwner
+	) {
+		TrendingRepository.getRepositories(forceUpdate, owner)
 	}
 	
 	/**
