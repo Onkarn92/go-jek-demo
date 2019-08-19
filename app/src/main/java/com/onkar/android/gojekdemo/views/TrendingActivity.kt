@@ -19,7 +19,7 @@ import com.ethanhua.skeleton.RecyclerViewSkeletonScreen
 import com.ethanhua.skeleton.Skeleton
 import com.onkar.android.gojekdemo.R
 import com.onkar.android.gojekdemo.adapters.TrendingRepositoryAdapter
-import com.onkar.android.gojekdemo.components.DaggerTrendingComponent
+import com.onkar.android.gojekdemo.dagger.components.DaggerTrendingComponent
 import com.onkar.android.gojekdemo.models.GitHubRepo
 import com.onkar.android.gojekdemo.views.models.TrendingViewModel
 import kotlinx.android.synthetic.main.activity_trending.*
